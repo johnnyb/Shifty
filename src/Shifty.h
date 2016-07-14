@@ -1,3 +1,7 @@
+#ifndef Shifty_h
+#define Shifty_h
+
+#include <Arduino.h>
 
 class Shifty {
   public:
@@ -42,3 +46,4 @@ class Shifty {
   bool readBitSoft(int bitnum);
 };
 
+#endif
