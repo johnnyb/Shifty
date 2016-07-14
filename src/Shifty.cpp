@@ -3,30 +3,15 @@
 Shifty::Shifty() {
 }
 
-Shifty::Shifty(int bitCount) {
-  setBitCount(bitCount);
-}
-
 void Shifty::setBitCount(int bitCount) {
   this->bitCount = bitCount;
   this->byteCount = bitCount/8;
-  this->writeBuffer = new byte[this->byteCount];
-  this->dataModes = new byte[this->byteCount];
-  this->readBuffer = new byte[this->byteCount];
   for(int i = 0; i < this->byteCount; i++) {
     this->writeBuffer[i] = 0;
     this->dataModes[i] = 0;
     this->readBuffer[i] = 0;
   }
 }  
-
-Shifty::~Shifty() {
-  if(readBuffer) {
-    delete[] readBuffer;
-    delete[] writeBuffer;
-    delete[] dataModes;
-  }
-}
 
 void Shifty::setPins(int dataPin, int clockPin, int latchPin, int readPin) {
   pinMode(dataPin, OUTPUT);
@@ -160,6 +145,3 @@ void Shifty::readAllBits() {
     }
   }
 }
-
-
-

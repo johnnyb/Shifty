@@ -6,11 +6,7 @@
 class Shifty {
   public:
 
-
-  // NOTE - bitCount MUST be a multiple of 8
-  Shifty(int bitCount);
   Shifty();
-  ~Shifty();
 
   void setBitCount(int bitCount);
   void setPins(int dataPin, int clockPin, int latchPin, int readPin);
@@ -32,9 +28,9 @@ class Shifty {
   
   int bitCount;
   int byteCount;
-  byte *writeBuffer = 0;
-  byte *dataModes = 0;
-  byte *readBuffer = 0;
+  byte writeBuffer[16];
+  byte dataModes[16];
+  byte readBuffer[16];
   bool batchWriteMode;
   bool batchReadMode;
 
