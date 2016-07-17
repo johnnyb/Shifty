@@ -54,7 +54,7 @@ Additionally, if you daisy-chain two 74HC595's together, you can use the same li
       myreg.setPins(11, 12, 8);
     }
 
-You can have as many 74HC595's linked together as you wish, barring electrical issues.  However, with more shift registers, the time it takes to push out the results increases.  For every batchWriteEnd() (or every single writeBit if you are not in a batch) it has to write to *every* shift register bit.
+You can have as many 74HC595's linked together as you wish, barring electrical issues.  Technically, the library limits you to 16, but that is easy enough to change.  However, with more shift registers, the time it takes to push out the results increases.  For every batchWriteEnd() (or every single writeBit if you are not in a batch) it has to write to *every* shift register bit.
 
 ### Input Pins
 
