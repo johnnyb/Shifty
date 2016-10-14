@@ -65,12 +65,19 @@ void Shifty::batchReadEnd() {
   batchReadMode = false;
 }
 
-void Shifty::bitMode(int bitnum, bool mode) {
+void Shifty::setBitMode(int bitnum, bool mode) {
   int bytenum = bitnum / 8;
   int offset = bitnum % 8;
   byte b = this->dataModes[bytenum];
   bitSet(b, offset);
   this->dataModes[bytenum] = b;
+}
+
+bool Shifty::getBitMode(int bitnum){ //true == input
+  int bytenum = bitnum / 8; // get working byte offset
+  int offset = bitnum % 8;  // get working bit offset
+  byte b = this->dataModes[bytenum]; //set b to working byte
+  return bitRead(this->dataModes[bytenum], offset);
 }
 
 void Shifty::writeBitSoft(int bitnum, bool value) {
