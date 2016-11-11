@@ -55,9 +55,9 @@ void Shifty::batchReadBegin() {
 
 bool Shifty::readBit(int bitnum) {
   if(batchReadMode) {
-    readBitSoft(bitnum);
+    return readBitSoft(bitnum);
   } else {
-    readBitHard(bitnum);
+    return readBitHard(bitnum);
   }
 }
 
@@ -131,6 +131,8 @@ bool Shifty::readBitHard(int bitnum) {
   byte cacheb = this->readBuffer[bytenum];
   bitWrite(cacheb, offset, value);
   this->readBuffer[bytenum] = cacheb;
+
+  return value;
 }
 
 void Shifty::readAllBits() {
