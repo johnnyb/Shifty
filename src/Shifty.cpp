@@ -11,7 +11,7 @@ void Shifty::setBitCount(int bitCount) {
     this->dataModes[i] = 0;
     this->readBuffer[i] = 0;
   }
-}  
+}
 
 void Shifty::setPins(int dataPin, int clockPin, int latchPin, int readPin) {
   pinMode(dataPin, OUTPUT);
@@ -78,6 +78,12 @@ bool Shifty::getBitMode(int bitnum){ //true == input
   int offset = bitnum % 8;  // get working bit offset
   byte b = this->dataModes[bytenum]; //set b to working byte
   return bitRead(this->dataModes[bytenum], offset);
+}
+
+bool Shifty::getWrittenBit(int bitnum){
+  int bytenum = bitnum / 8;
+  int offset = bitnum % 8;
+  return bitRead(this->writeBuffer[bytenum], offset);
 }
 
 void Shifty::writeBitSoft(int bitnum, bool value) {
