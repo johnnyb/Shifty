@@ -126,6 +126,7 @@ bool Shifty::readBitHard(int bitnum) {
         }
       }
     }
+    this->writeBuffer[i] = outb;
   }
 
   // Flush
