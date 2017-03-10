@@ -11,7 +11,7 @@ class Shifty {
   void setBitCount(int bitCount);
   void setPins(int dataPin, int clockPin, int latchPin, int readPin);
   void setPins(int dataPin, int clockPin, int latchPin);
-  void setbitMode(int bitnum, bool mode);
+  void setBitMode(int bitnum, bool mode);
   bool getBitMode(int bitnum);
   void batchWriteBegin();
   void batchWriteEnd();
