@@ -18,6 +18,7 @@ class Shifty {
   void batchReadBegin();
   void batchReadEnd();
   void writeBit(int bitnum, bool value);
+  bool getWrittenBit(int bitnum);
   bool readBit(int bitnum);
 
   private:
@@ -26,7 +27,7 @@ class Shifty {
   int clockPin;
   int readPin;
   int latchPin;
-  
+
   int bitCount;
   int byteCount;
   byte writeBuffer[16];
