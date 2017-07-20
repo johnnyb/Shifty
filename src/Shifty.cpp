@@ -17,11 +17,11 @@ void Shifty::setPins(int dataPin, int clockPin, int latchPin, int readPin) {
   pinMode(dataPin, OUTPUT);
   pinMode(clockPin, OUTPUT);
   pinMode(latchPin, OUTPUT);
-  pinMode(readPin, INPUT);
   this->dataPin = dataPin;
   this->clockPin = clockPin;
   this->latchPin = latchPin;
   if(readPin != -1) {
+    pinMode(readPin, INPUT);
     this->readPin = readPin;
   }
 }
