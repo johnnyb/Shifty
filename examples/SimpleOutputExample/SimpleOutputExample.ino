@@ -7,7 +7,7 @@ void setup() {
   // Set the number of bits you have (multiples of 8)
   shift.setBitCount(8);
 
-  // Set the clock, data, and latch pins you are using
+  // Set the data, clock and latch pins you are using
   // This also sets the pinMode for these pins
   shift.setPins(11, 12, 8); 
 }
