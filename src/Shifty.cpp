@@ -76,7 +76,7 @@ void Shifty::setBitMode(int bitnum, bool mode) {
 bool Shifty::getBitMode(int bitnum){ //true == input
   int bytenum = bitnum / 8; // get working byte offset
   int offset = bitnum % 8;  // get working bit offset
-  byte b = this->dataModes[bytenum]; //set b to working byte
+  // byte b = this->dataModes[bytenum]; //set b to working byte
   return bitRead(this->dataModes[bytenum], offset);
 }
 
@@ -145,8 +145,8 @@ bool Shifty::readBitHard(int bitnum) {
 void Shifty::readAllBits() {
   for(int i = 0; i < this->byteCount; i++) {
     byte mask = this->dataModes[i];
-    byte outb = this->writeBuffer[i];
-    byte inb = 0;
+    // byte outb = this->writeBuffer[i];
+    // byte inb = 0;
     for(int j = 0; j < 8; j++) {
       if(bitRead(mask, j)) {
         readBitHard(i * 8 + j);
